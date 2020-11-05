@@ -2,14 +2,14 @@
 
 ![stacks](https://img.shields.io/badge/Angular-10.2.0-critical)   ![stacks](https://img.shields.io/badge/TypeScript-4.0.3-blue)
 
-Food is the project assigned to meals defined according to their category. Simple design using several components, which can be added to the cart, or removed
+*Food is the project assigned to meals defined according to their category. Simple design using several components, which can be added to the cart, or removed*
 
 <img height="450" align="center" src="https://imgur.com/wbJ6Z0D.jpeg" alt="projeto"/> 
 
 
 <img height="450" align="center" src="https://imgur.com/lx3II8O.jpeg" alt="projeto"/> 
 
-List of elements:
+*List of elements:*
 
 
 
@@ -17,7 +17,7 @@ List of elements:
 
 
 
-Element search:
+*Element search:*
 <img height="450" align="center" src="https://imgur.com/ssq03Qm.jpeg" alt="projeto"/>
 
 
