@@ -1,0 +1,58 @@
+<mat-sidenav-container class="container">
+    <mat-sidenav class="sidenav" mode="side" opened fixedInViewport="true" fixedTopGap="64">
+        <mat-nav-list class="nav-list">
+
+            <a mat-list-item routerLink="/">
+                <i class="material-icons">
+                    home
+                </i>
+                Home
+            </a>
+            <a mat-list-item routerLink="/search">
+                <i class="material-icons">
+                    search
+                </i>
+                Search
+            </a>
+            <a mat-list-item routerLink="/all">
+                <i class="material-icons">
+                    view_headline
+                </i>
+                All
+            </a>
+            <a mat-list-item routerLink="/chinese">
+                <img src="assets/images/noodles.png" alt="logo" id="image">
+                Chinese
+            </a>
+
+
+            <a mat-list-item routerLink="/burgers">
+                <i class="material-icons">
+                    fastfood
+                </i>
+                Burgers
+            </a>
+
+            <a mat-list-item routerLink="/salad">
+                <img src="assets/images/lettuce.png" alt="logo" id="image">
+                Salad
+            </a>
+            <a mat-list-item routerLink="/beverage">
+
+                <img src="assets/images/drink.png" alt="logo" id="imageDrink">
+                Beverage
+            </a>
+            <a mat-list-item routerLink="/pizza">
+                <i class="material-icons">
+                    local_pizza
+                </i>
+                Pizza
+            </a>
+
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content class="content">
+        <router-outlet></router-outlet>
+
+    </mat-sidenav-content>
+</mat-sidenav-container>

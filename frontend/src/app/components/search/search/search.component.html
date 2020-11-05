@@ -1,0 +1,15 @@
+<mat-card>
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Search" name="food" [(ngModel)]="foodSearch">
+        </mat-form-field>
+    </form>
+
+    <button mat-raised-button color="primary" (click)="search()">
+        Search
+    </button>
+</mat-card>
+
+<div *ngIf="(FoodItems.length > 0)">
+    <app-search-get [itens]="FoodItems"></app-search-get>
+</div>

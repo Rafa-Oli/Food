@@ -1,0 +1,10 @@
+table{ 
+    width:100%;
+}
+i.delete{
+    color: #e35e6b;
+}
+
+.button-close{
+    margin-top: 15px;
+}
