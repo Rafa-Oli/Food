@@ -1,0 +1,27 @@
+
+<table class="table" >
+    <thead class="thead-dark" >
+        <tr>
+            <th scope="col">Title </th>
+            <th scope="col">Price </th>
+            <th scope="col">Cuisine </th>
+            <th scope="col">Actions </th>
+        </tr>
+ 
+    </thead>
+    
+    <tbody>
+        <tr *ngFor= 'let item of itens'>
+            <td>  {{ item.title }}  </td>
+            <td>  {{ item.price }}  </td>
+            <td>  {{ item.cuisine }}  </td>
+           <td><button type="button" class="btn btn-outline-secondary" (click)="addToCart(item)">
+                <fa-icon [icon]="faCartPlus"></fa-icon> 
+            </button>
+            </td>
+        </tr>
+       
+    </tbody>
+  
+</table>
+

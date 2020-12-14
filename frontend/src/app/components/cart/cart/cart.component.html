@@ -1,50 +1,51 @@
-<h1>Cart</h1>
+<!-- Botão para acionar modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalCart">
+    <fa-icon [icon]="faShoppingCart"></fa-icon> Checkout
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="modalCart" tabindex="-1" role="dialog" aria-labelledby="cartModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="cartModalLabel">Cart</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <table class="table table-striped table-hover">
+                <tr>
+                    <th scope="col">Title </th>
+                    <th scope="col">Price </th>
+                    <th scope="col">Cuisine </th>
+                    <th scope="col">Actions </th>
+                </tr>
+                <tbody>
+                    <tr *ngFor='let item of items'>
+                        <td> {{ item.title }} </td>
+                        <td> {{ item.price }} </td>
+                        <td> {{ item.cuisine }} </td>
+                        <td><button type="button" class="btn btn-outline-secondary" (click)="delete(item)">
+                                <fa-icon [icon]="faTrash"></fa-icon>
+                            </button>
+                        </td>
+                    </tr>
+                
+                </tbody>
 
 
-<div class="mat-elevation-z4">
-    <table mat-table [dataSource]="items">
-
-<!-- Title Column -->
-<ng-container matColumnDef="title">
-    <th mat-header-cell *matHeaderCellDef >Title</th>
-    <td mat-cell *matCellDef="let row">{{row.title}}</td>
-  </ng-container>
-
-    <!-- Price Column -->
-    <ng-container matColumnDef="price">
-        <th mat-header-cell *matHeaderCellDef >Price</th>
-        <td mat-cell *matCellDef="let row">{{row.price | currency}}</td>
-      </ng-container>
-
-       <!-- Cuisine Column -->
-    <ng-container matColumnDef="cuisine">
-        <th mat-header-cell *matHeaderCellDef >Cuisine</th>
-        <td mat-cell *matCellDef="let row">{{row.cuisine}}</td>
-      </ng-container>
-
-      <!-- Action Column -->
-      <ng-container matColumnDef="action">
-        <th mat-header-cell *matHeaderCellDef>Action</th>
-        <td mat-cell *matCellDef="let row">
-        <button mat-raised-button color="primary" (click)="delete(row)">
-          <i class="material-icons">delete</i>
-        </button>
-            </td>
-            </ng-container>
-          
-          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-</table>
-
+                </table>
+               
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Buy</button>
+            </div>
+        </div>
+    </div>
 </div>
 
-<button mat-raised-button color="primary" (click)="closeOrder()" class="button-close">Close Order</button>
-
-
-
-
-
-
-
-
-
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/4.5.3/js/bootstrap.min.js"></script>

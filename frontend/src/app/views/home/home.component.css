@@ -1,9 +1,21 @@
-.home .title{
-    font-size: 3rem;
+ 
+ .card{
+    font-size: 2rem;
     font-weight: 300;
     line-height: 1.2;
 }
 
+.jumbotron{
+    margin-top: 20px;
+    padding: 2rem 2rem;
+
+}
 .home .subtitle{
     font-size: 1.1rem;
+}
+#image{
+    width: 26px;
+    padding-right: 4px;
+    margin-bottom: 5px;
+    color: #6c757d;
 }

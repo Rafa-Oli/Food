@@ -7,6 +7,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import { HeaderComponent } from './components/template/header/header.component';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -38,8 +39,13 @@ import { SaladComponent } from './views/salad/salad.component';
 import { BeverageComponent } from './views/beverage/beverage.component';
 import { PizzaComponent } from './views/pizza/pizza.component';
 
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { CommonModule } from '@angular/common';
+import { Search2Component } from './search2/search2.component';
+import { CategoriesComponent } from './categories/categories.component';
+import { FoodsComponent } from './foods/foods.component';
 
-import { CommonModule } from '@angular/common'; 
+
 
 
 @NgModule({
@@ -57,6 +63,12 @@ import { CommonModule } from '@angular/common';
     SaladComponent,
     BeverageComponent,
     PizzaComponent,
+    Search2Component,
+    CategoriesComponent,
+    FoodsComponent,
+
+    
+  
    
   ],
   imports: [
@@ -76,7 +88,8 @@ import { CommonModule } from '@angular/common';
     MatPaginatorModule,
     MatSortModule,
     MatSnackBarModule,
-    CommonModule
+    CommonModule,
+    FontAwesomeModule
   
   ],
   providers: [

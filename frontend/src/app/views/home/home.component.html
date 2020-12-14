@@ -1,8 +1,30 @@
-<mat-card class="home mat-elevation-z3">
-    <mat-card-title class="title">
-        Welcome!
-    </mat-card-title>
-    <mat-card-subtitle class="subtitle">
-         Food Delivery- Food filtration and research
-        </mat-card-subtitle>
-</mat-card>
+<div class="card" style="text-align: center;">
+    <div class="card-header">Welcome</div>
+
+</div>
+
+
+<div class="jumbotron">
+    <div class="row">
+        <div class="col-sm-12">
+            <app-search2 (newFoodEvent)="search($event)"> </app-search2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <app-categories (newItemEvent)="foods($event)"></app-categories>
+        </div>
+        <div class="col-sm-12">
+            <div >
+                <app-foods [itens]="itens" [itens]= "itemSearch"></app-foods>
+            </div>
+        </div>
+        <div class="col-sm-12">
+            <div class="d-flex justify-content-end">
+                <app-cart></app-cart>
+            </div>
+        </div>
+    </div>
+
+</div>
+
