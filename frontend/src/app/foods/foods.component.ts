@@ -15,40 +15,20 @@ const todoListStorageKey = "Todo_List";
 })
 export class FoodsComponent implements OnInit {
   @Input() itens: string;
-  @Input() itemSearch;
- 
-
 
   todoList: Food[];
- 
-
   faCartPlus = faCartPlus;
   FoodItems;
 
-
-  
-  
   constructor(private storageService: StorageService) {
     this.todoList =
     storageService.getData(todoListStorageKey) || defaultTodoList;
-    console.log(this.itemSearch)
   }
   
   ngOnInit(): void {
 
   }
 
-
-/*
-  addItem(cuisine: string) {
-    if (cuisine === "all") {
-      this.FoodItems = data.food;
-
-    } else {
-      this.FoodItems = data.food.filter((e) => e.cuisine === cuisine);
-    }
-  }
-*/
   addToCart(food) {
     this.todoList.push(food);
     this.storageService.setData(todoListStorageKey, this.todoList);

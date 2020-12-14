@@ -37,18 +37,6 @@ export class CategoriesComponent implements OnInit {
   
   exibirTabela(food: string) {
     this.newItemEvent.emit(food);
-    console.log(food)
   }
 
-/*
-  exibirTabela(food: String){
-    if(food === "all"){
-      this.FoodItems = data.food;
-
-    }else{
-      this.FoodItems = data.food.filter((e) => e.cuisine === food);
-    }
-    console.log(this.categorie)
-  }
-  */
 }
