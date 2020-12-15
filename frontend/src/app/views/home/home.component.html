@@ -14,9 +14,10 @@
         <div class="col-sm-12">
             <app-categories (newItemEvent)="foods($event)"></app-categories>
         </div>
-        <div class="col-sm-12">
-            <div >
-                <app-foods [itens]="itens" [itens]= "itemSearch"></app-foods>
+        <div class="row">
+            <div class="col-sm-20">
+                   <app-product-list [itens]="itens" [itens]= "itemSearch"></app-product-list>
+               <!-- <app-foods [itens]="itens" [itens]= "itemSearch"></app-foods>   --> 
             </div>
         </div>
         <div class="col-sm-12">

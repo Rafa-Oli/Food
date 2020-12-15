@@ -35,6 +35,8 @@ import { CommonModule } from '@angular/common';
 import { Search2Component } from './search2/search2.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { FoodsComponent } from './foods/foods.component';
+import { ProductListComponent } from './product-list/product-list.component';
+import { ProductCardComponent } from './product-card/product-card.component';
 
 
 
@@ -48,6 +50,8 @@ import { FoodsComponent } from './foods/foods.component';
     Search2Component,
     CategoriesComponent,
     FoodsComponent,
+    ProductListComponent,
+    ProductCardComponent,
    
   ],
   imports: [

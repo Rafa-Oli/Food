@@ -24,6 +24,7 @@ export class CartComponent implements OnInit {
   constructor(private storageService: StorageService) { }
 
   ngOnInit(): void {
+    
   this.items = this.storageService.getData(todoListStorageKey);
    }
 
