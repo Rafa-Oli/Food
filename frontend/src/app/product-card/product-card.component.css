@@ -4,8 +4,18 @@
     box-sizing: border-box;
   
     margin: 1rem .25em;
-  
+}
+.row{
+    display: flex;
+flex-wrap: wrap;
+    margin-right: -15px;
+margin-left: -15px;
+}
+.col-sm-12 {
+    flex: 0 0 60.333333%;
+    max-width: 60.333333%;
 }
 
-
-
+*, ::after, ::before {
+    box-sizing: border-box;
+}
