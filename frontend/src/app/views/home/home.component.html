@@ -14,12 +14,8 @@
         <div class="col-sm-12">
             <app-categories (newItemEvent)="foods($event)"></app-categories>
         </div>
-      
-         
-                   <app-product-list [itens]="itens" [itens]= "itemSearch"></app-product-list>
-               <!-- <app-foods [itens]="itens" [itens]= "itemSearch"></app-foods>   --> 
- 
-      
+          <app-product-list [itens]="itens" [itens]= "itemSearch"></app-product-list>
+               <!-- <app-foods [itens]="itens" [itens]= "itemSearch"></app-foods>  TABELA --> 
         <div class="col-sm-12">
             <div class="d-flex justify-content-end">
                 <app-cart></app-cart>

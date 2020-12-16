@@ -13,6 +13,7 @@ import { data } from 'src/app/components/food.model';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  
   faHamburger = faHamburger;
   faBars = faBars;
   faAppleAlt = faAppleAlt;
@@ -21,10 +22,10 @@ export class HomeComponent implements OnInit {
   itens;
   itemSearch;
 
+
   foods(food: string){
     if (food === "all") {
       this.itens = data.food;
-
     } else {
       this.itens = data.food.filter((e) => e.cuisine === food);
     }
@@ -32,11 +33,12 @@ export class HomeComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
+
   search(foodSearch: string) {
-    this.itemSearch = data.food.filter((e) => e.title === foodSearch);
-    
-    //console.log("Aquiiii", foodSearch)
+   this.itemSearch= data.food.filter(el => el.title.toLowerCase().includes(foodSearch.toLowerCase()))
   }
+
+
+
 }
