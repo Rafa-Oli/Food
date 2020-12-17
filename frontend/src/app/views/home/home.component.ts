@@ -4,13 +4,13 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { faAppleAlt } from '@fortawesome/free-solid-svg-icons';
 import { faCocktail } from '@fortawesome/free-solid-svg-icons';
 import { faPizzaSlice } from '@fortawesome/free-solid-svg-icons';
-import { data } from 'src/app/components/food.model';
-
+import { FoodsService } from 'src/app/foods.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
+
 })
 export class HomeComponent implements OnInit {
   
@@ -22,21 +22,20 @@ export class HomeComponent implements OnInit {
   itens;
   itemSearch;
 
+  constructor(private foodsService: FoodsService) { }
 
   foods(food: string){
     if (food === "all") {
-      this.itens = data.food;
+      this.itens = this.foodsService.getFoods();
     } else {
-      this.itens = data.food.filter((e) => e.cuisine === food);
+      this.itens = this.foodsService.getFoods().filter((e) => e.cuisine === food);
     }
   }
-
-  constructor() { }
 
   ngOnInit(): void { }
 
   search(foodSearch: string) {
-   this.itemSearch= data.food.filter(el => el.title.toLowerCase().includes(foodSearch.toLowerCase()))
+    this.itemSearch = this.foodsService.foods.filter(el => el.title.toLowerCase().includes(foodSearch.toLowerCase()))
   }
 
 

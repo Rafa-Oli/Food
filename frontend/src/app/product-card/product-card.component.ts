@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit} from '@angular/core';
 import { faCartPlus } from '@fortawesome/free-solid-svg-icons';
 import { Food } from '../components/food.model';
 import { StorageService } from '../components/service/storage.service';
@@ -27,11 +27,11 @@ export class ProductCardComponent implements OnInit{
 
   ngOnInit(): void {
   }
+  
 
   addToCart(food) {
     this.todoList.push(food);
     this.storageService.setData(todoListStorageKey, this.todoList);
-    
     window.alert("Your product has been added to the cart!");
   }
 }

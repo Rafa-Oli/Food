@@ -37,6 +37,8 @@ import { CategoriesComponent } from './categories/categories.component';
 import { FoodsComponent } from './foods/foods.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductCardComponent } from './product-card/product-card.component';
+import { CreateFoodComponent } from './create-food/create-food.component';
+import { NavComponent } from './nav/nav.component';
 
 
 
@@ -52,6 +54,8 @@ import { ProductCardComponent } from './product-card/product-card.component';
     FoodsComponent,
     ProductListComponent,
     ProductCardComponent,
+    CreateFoodComponent,
+    NavComponent,
    
   ],
   imports: [

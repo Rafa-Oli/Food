@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { data, Food } from "./../components/food.model";
+import { Food } from "./../components/food.model";
 import { faCartPlus } from '@fortawesome/free-solid-svg-icons';
 import { Input } from '@angular/core';
 import { StorageService } from '../components/service/storage.service';

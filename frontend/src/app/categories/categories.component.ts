@@ -1,12 +1,13 @@
 import { EventEmitter } from '@angular/core';
 import { Output } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { faHamburger } from '@fortawesome/free-solid-svg-icons';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { faAppleAlt } from '@fortawesome/free-solid-svg-icons';
 import { faCocktail } from '@fortawesome/free-solid-svg-icons';
 import { faPizzaSlice } from '@fortawesome/free-solid-svg-icons';
-import { Food, data } from '../components/food.model';
+
 
 
 @Component({
@@ -28,7 +29,8 @@ export class CategoriesComponent implements OnInit {
   FoodItems:any;
   
   
-  constructor() {}
+  constructor(private router: Router) { }
+
   
   
   ngOnInit(): void {
@@ -38,5 +40,6 @@ export class CategoriesComponent implements OnInit {
   exibirTabela(food: string) {
     this.newItemEvent.emit(food);
   }
+ 
 
 }
