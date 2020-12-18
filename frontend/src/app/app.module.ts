@@ -5,12 +5,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
-
-import { HeaderComponent } from './topo/header/header.component';
 import { HomeComponent } from './home/home/home.component';
-
-
 import { StorageService } from './service/storage.service';
 
 import { CartComponent } from './home/cart/cart/cart.component';
@@ -23,15 +18,16 @@ import { FoodsComponent } from './home/foods/foods.component';
 import { ProductListComponent } from './home/product-list/product-list.component';
 import { ProductCardComponent } from './home/product-card/product-card.component';
 import { CreateFoodComponent } from './new-food/create-food/create-food.component';
-import { NavComponent } from './nav/nav.component';
+import { NavComponent } from './components/nav/nav.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AdminComponent } from './admin/admin.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
+  
     HomeComponent,
     CartComponent,
     Search2Component,
@@ -41,6 +37,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     ProductCardComponent,
     CreateFoodComponent,
     NavComponent,
+    AdminComponent,
     
    
   ],
