@@ -1,7 +1,7 @@
 import { Component, Input, OnInit} from '@angular/core';
 import { faCartPlus } from '@fortawesome/free-solid-svg-icons';
-import { Food } from '../components/food.model';
-import { StorageService } from '../components/service/storage.service';
+import { Food } from '../../shared/food.model';
+import { StorageService } from '../../service/storage.service';
 
 const defaultTodoList = [];
 const todoListStorageKey = "Todo_List";
