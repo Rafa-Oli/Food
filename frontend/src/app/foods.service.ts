@@ -20,7 +20,6 @@ export class FoodsService {
   }
   public readByTitle(food: string): Food{
     this.getFoodAdmin= this.foods.filter((e) => e.title === food);
-    console.log('aqqii', this.getFoodAdmin)
     return this.getFoodAdmin;
   }
 

@@ -11,41 +11,37 @@ import { ActivatedRoute } from '@angular/router';
 })
 
 export class CreateFoodComponent implements OnInit {
-    
-    formulario: FormGroup;
-    public dados: object;
-    food: Food;
-    title: string;
 
-  constructor(private foodsService: FoodsService, private formBuilder: FormBuilder,private route: ActivatedRoute) { }
+  formulario: FormGroup;
+  public dados: object;
+  food: Food;
+
+
+  constructor(private foodsService: FoodsService, private formBuilder: FormBuilder, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-
+    
+    //pegando parametro da url
     const title = this.route.snapshot.paramMap.get('title')
-    this.food = this.foodsService.readByTitle(title)
-    console.log('item',this.food.title)
-    this.title = this.food.title
+    this.food = this.foodsService.readByTitle(title) //fazendo o get
 
-    console.log('ttttt',this.title)
-   if(this.title === ""){
-   
-console.log('errrroooo')
-     this.formulario = this.formBuilder.group({
-       title: [''],
-       price: [''],
-       cuisine: [''],
-     });
 
-   }else{
-     this.formulario = this.formBuilder.group({
-       title: [''],
-       price: [this.food.price],
-       cuisine: [this.food.cuisine],
-     });
-   }
+    if (Object.entries(this.food).length === 0) {
+      this.formulario = this.formBuilder.group({
+        title: [''],
+        price: [''],
+        cuisine: [''],
+      });
 
+    } else {
+      this.formulario = this.formBuilder.group({ //setando valores para edicao
+        title: [this.food[0].title],
+        price: [this.food[0].price],
+        cuisine: [this.food[0].cuisine],
+      });
+
+    }
   }
-
   onSubmit() {
     let dados: Food = {
       title: this.formulario.controls['title'].value,
@@ -54,6 +50,6 @@ console.log('errrroooo')
     }
     this.foodsService.setFoods(dados);
     this.formulario.reset()
-   // console.warn(this.formulario.controls['title'].value);
+    // console.warn(this.formulario.controls['title'].value);
   }
 }
