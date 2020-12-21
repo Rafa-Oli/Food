@@ -6,6 +6,7 @@ import { Food } from './shared/food.model';
 })
 export class FoodsService {
 
+  getFoodAdmin;
   constructor() { }
 
   public getFoods(): Array<Food> {
@@ -17,10 +18,16 @@ export class FoodsService {
   public deleteFoods(food: Food): void {
     this.foods.splice(this.foods.indexOf(food),1);
   }
+  public readByTitle(food: string): Food{
+    this.getFoodAdmin= this.foods.filter((e) => e.title === food);
+    console.log('aqqii', this.getFoodAdmin)
+    return this.getFoodAdmin;
+  }
 
   public foods: Array<Food> = [
 
     {
+     
       title: 'Buffalo Chicken Salad',
       price: 7.50,
       cuisine: 'salad'

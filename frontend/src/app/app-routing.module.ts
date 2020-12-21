@@ -14,9 +14,17 @@ const routes: Routes = [
     component: CreateFoodComponent
   },{
     path: "admin",
-    component: AdminComponent
-  },
-];
+    children: [
+      {
+        path: '',
+        component: AdminComponent
+      },{
+        path:'create-food/:title',
+        component:CreateFoodComponent
+      }
+    ]
+  }
+];             
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

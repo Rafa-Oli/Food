@@ -19,8 +19,9 @@ const todoListStorageKey = "Todo_List";
 
 export class ProductCardComponent implements OnInit{
 
-  @Output() newItemEvent = new EventEmitter<Food>();
+  @Output() newItemEvent = new EventEmitter<any>();
   
+
   @Input() isAdmin;
   @Input() itens;
   @Input() isClient;
@@ -45,10 +46,11 @@ export class ProductCardComponent implements OnInit{
     window.alert("Your product has been added to the cart!");
   }
 
-  deleteAdmin(food: Food){
-    console.log('dentro do card')
+  deleteAdmin(food){
     this.newItemEvent.emit(food);
   }
+
+ 
 
 
 }
