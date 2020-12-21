@@ -14,6 +14,9 @@ export class FoodsService {
   public setFoods(food: Food): void {
     this.foods.push(food);
   }
+  public deleteFoods(food: Food): void {
+    this.foods.splice(this.foods.indexOf(food),1);
+  }
 
   public foods: Array<Food> = [
 

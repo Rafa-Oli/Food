@@ -1,7 +1,10 @@
-import { Component, Input, OnInit} from '@angular/core';
+import { Component, Input, OnInit, Output} from '@angular/core';
 import { faCartPlus } from '@fortawesome/free-solid-svg-icons';
+import { faPen } from '@fortawesome/free-solid-svg-icons';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { Food } from '../../shared/food.model';
 import { StorageService } from '../../service/storage.service';
+import { EventEmitter } from '@angular/core';
 
 const defaultTodoList = [];
 const todoListStorageKey = "Todo_List";
@@ -15,11 +18,18 @@ const todoListStorageKey = "Todo_List";
 
 
 export class ProductCardComponent implements OnInit{
+
+  @Output() newItemEvent = new EventEmitter<Food>();
+  
+  @Input() isAdmin;
   @Input() itens;
+  @Input() isClient;
+
   faCartPlus = faCartPlus;
+  faPen = faPen;
+  faTrash = faTrash;
   todoList: Food[];
- 
-  FoodItems;
+
   constructor(private storageService: StorageService) {
     this.todoList =
       storageService.getData(todoListStorageKey) || defaultTodoList;
@@ -34,4 +44,11 @@ export class ProductCardComponent implements OnInit{
     this.storageService.setData(todoListStorageKey, this.todoList);
     window.alert("Your product has been added to the cart!");
   }
+
+  deleteAdmin(food: Food){
+    console.log('dentro do card')
+    this.newItemEvent.emit(food);
+  }
+
+
 }

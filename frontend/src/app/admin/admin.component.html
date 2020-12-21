@@ -1,1 +1,4 @@
-<p>admin works!</p>
+
+<div class="container">
+    <app-product-card class="card-list" [isAdmin]="isAdmin" [itens]="itens" (newItemEvent)="deleteItem($event)"></app-product-card>
+</div>

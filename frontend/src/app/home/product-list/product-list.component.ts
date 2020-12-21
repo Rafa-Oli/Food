@@ -7,6 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ProductListComponent implements OnInit {
   @Input() itens: string;
+  isClient: boolean = true;
   
   constructor() { }
 

@@ -1,5 +1,4 @@
 
-
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -27,7 +26,6 @@ import { AdminComponent } from './admin/admin.component';
 @NgModule({
   declarations: [
     AppComponent,
-  
     HomeComponent,
     CartComponent,
     Search2Component,
