@@ -63,7 +63,7 @@ export class CreateFoodComponent implements OnInit {
 
     this.foodsService.updateFood(dados, this.food)
     this.formulario.reset()
-    this.isEdit= false;
+   
 
   }
 }
