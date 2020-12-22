@@ -22,8 +22,15 @@
             <input type="text" class="form-control" formControlName="price" placeholder="Price">
         </div>
 
-        <button type="submit" class="btn btn-primary" (click)="onSubmit()" data-toggle="modal" 
-            data-target="#modalSalvar">Salvar</button>
+        <div *ngIf='isEdit === false'>
+            <button type="submit" class="btn btn-primary" (click)="onSubmit()" data-toggle="modal" 
+                data-target="#modalSalvar">Salvar</button>
+        </div>
+
+        <div *ngIf='isEdit === true'>
+            <button type="submit" class="btn btn-primary" (click)="onUpdate()" data-toggle="modal" 
+                data-target="#modalSalvar">Salvar Alterações</button>
+        </div>
     </form>
 
 

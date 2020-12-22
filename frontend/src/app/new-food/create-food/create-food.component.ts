@@ -15,7 +15,7 @@ export class CreateFoodComponent implements OnInit {
   formulario: FormGroup;
   public dados: object;
   food: Food;
-
+  isEdit = false
 
   constructor(private foodsService: FoodsService, private formBuilder: FormBuilder, private route: ActivatedRoute) { }
 
@@ -34,6 +34,7 @@ export class CreateFoodComponent implements OnInit {
       });
 
     } else {
+      this.isEdit= true;
       this.formulario = this.formBuilder.group({ //setando valores para edicao
         title: [this.food[0].title],
         price: [this.food[0].price],
@@ -51,5 +52,18 @@ export class CreateFoodComponent implements OnInit {
     this.foodsService.setFoods(dados);
     this.formulario.reset()
     // console.warn(this.formulario.controls['title'].value);
+  }
+
+  onUpdate(){
+    let dados: Food = {
+      title: this.formulario.controls['title'].value,
+      price: this.formulario.controls['price'].value,
+      cuisine: this.formulario.controls['cuisine'].value
+    }
+
+    this.foodsService.updateFood(dados, this.food)
+    this.formulario.reset()
+    this.isEdit= false;
+
   }
 }

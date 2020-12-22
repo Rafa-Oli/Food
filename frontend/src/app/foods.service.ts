@@ -7,6 +7,7 @@ import { Food } from './shared/food.model';
 export class FoodsService {
 
   getFoodAdmin;
+  update;
   constructor() { }
 
   public getFoods(): Array<Food> {
@@ -21,6 +22,13 @@ export class FoodsService {
   public readByTitle(food: string): Food{
     this.getFoodAdmin= this.foods.filter((e) => e.title === food);
     return this.getFoodAdmin;
+  }
+  public updateFood(foodUpdate: Food, foodOrigin: Food){
+    console.log(foodUpdate,foodOrigin[0])
+    this.update = this.foods.map(function (e) { return e.title; }).indexOf(foodOrigin[0].title);
+    console.log(this.update)
+    this.foods[this.update] = foodUpdate;
+  
   }
 
   public foods: Array<Food> = [
