@@ -50,7 +50,4 @@ export class ProductCardComponent implements OnInit{
     this.newItemEvent.emit(food);
   }
 
- 
-
-
 }

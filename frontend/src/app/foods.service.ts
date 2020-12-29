@@ -24,11 +24,8 @@ export class FoodsService {
     return this.getFoodAdmin;
   }
   public updateFood(foodUpdate: Food, foodOrigin: Food){
-    console.log(foodUpdate,foodOrigin[0])
     this.update = this.foods.map(function (e) { return e.title; }).indexOf(foodOrigin[0].title);
-    console.log(this.update)
     this.foods[this.update] = foodUpdate;
-  
   }
 
   public foods: Array<Food> = [

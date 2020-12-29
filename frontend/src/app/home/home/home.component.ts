@@ -37,7 +37,4 @@ export class HomeComponent implements OnInit {
   search(foodSearch: string) {
     this.itemSearch = this.foodsService.foods.filter(el => el.title.toLowerCase().includes(foodSearch.toLowerCase()))
   }
-
-
-
 }

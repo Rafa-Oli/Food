@@ -23,8 +23,6 @@ export class AdminComponent implements OnInit {
     this.foodsService.deleteFoods(food);
   }
 
-  updateItem(food) {
-   // this.foodsService.setFoods(food);
-  }
+ 
 
 }
