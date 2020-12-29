@@ -25,7 +25,7 @@ export class CreateFoodComponent implements OnInit {
     const title = this.route.snapshot.paramMap.get('title')
     this.food = this.foodsService.readByTitle(title) //fazendo o get
 
-
+   //criando um novo food
     if (Object.entries(this.food).length === 0) {
       this.formulario = this.formBuilder.group({
         title: [''],
@@ -33,9 +33,9 @@ export class CreateFoodComponent implements OnInit {
         cuisine: [''],
       });
 
-    } else {
+    } else { //update food
       this.isEdit= true;
-      this.formulario = this.formBuilder.group({ //setando valores para edicao
+      this.formulario = this.formBuilder.group({ //setando valores originais para edicao
         title: [this.food[0].title],
         price: [this.food[0].price],
         cuisine: [this.food[0].cuisine],
@@ -63,7 +63,5 @@ export class CreateFoodComponent implements OnInit {
 
     this.foodsService.updateFood(dados, this.food)
     this.formulario.reset()
-   
-
   }
 }
