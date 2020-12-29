@@ -1,4 +1,4 @@
-<i><h1 align="center"> Food :fork_and_knife:</h1></i>
+<i><h1 align="center"> Food </h1></i>
 
 ![stacks](https://img.shields.io/badge/Angular-10.2.0-critical)   ![stacks](https://img.shields.io/badge/TypeScript-4.0.3-blue)
 
