@@ -12,7 +12,7 @@ import { FoodsComponent } from '../foods/foods.component';
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.css']
 })
-export class Search2Component implements OnInit {
+export class SearchComponent implements OnInit {
   
   @Output() newFoodEvent = new EventEmitter<string>();
 

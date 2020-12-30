@@ -11,7 +11,7 @@ import { CartComponent } from './home/cart/cart/cart.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CommonModule } from '@angular/common';
-import { Search2Component } from './home/search/search.component';
+import { SearchComponent } from './home/search/search.component';
 import { CategoriesComponent } from './home/categories/categories.component';
 import { FoodsComponent } from './home/foods/foods.component';
 import { ProductListComponent } from './home/product-list/product-list.component';
@@ -28,7 +28,7 @@ import { AdminComponent } from './admin/admin.component';
     AppComponent,
     HomeComponent,
     CartComponent,
-    Search2Component,
+    SearchComponent,
     CategoriesComponent,
     FoodsComponent,
     ProductListComponent,
