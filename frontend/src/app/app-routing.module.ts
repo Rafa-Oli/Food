@@ -1,8 +1,8 @@
 
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './home/home/home.component';
-import { CreateFoodComponent } from './new-food/create-food/create-food.component';
+import { HomeComponent } from './home/home.component';
+import { FoodFormComponent } from './admin/food-form/food-form.component';
 import { AdminComponent } from './admin/admin.component';
 
 const routes: Routes = [
@@ -10,8 +10,8 @@ const routes: Routes = [
     path: "",
     component: HomeComponent
   }, {
-    path: "create-food",
-    component: CreateFoodComponent
+    path: "food-form",
+    component: FoodFormComponent
   },{
     path: "admin",
     children: [
@@ -19,8 +19,8 @@ const routes: Routes = [
         path: '',
         component: AdminComponent
       },{
-        path:'create-food/:title',
-        component:CreateFoodComponent
+        path:'food-form/:title',
+        component: FoodFormComponent
       }
     ]
   }

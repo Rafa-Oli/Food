@@ -1,9 +1,8 @@
 import { EventEmitter, Output } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { Observable, Subject } from 'rxjs';
-import { Food } from 'src/app/shared/food.model';
-import { FoodsComponent } from '../foods/foods.component';
+
+
 
 
 

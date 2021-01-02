@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
 import { faHamburger } from '@fortawesome/free-solid-svg-icons';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { faAppleAlt } from '@fortawesome/free-solid-svg-icons';
 import { faCocktail } from '@fortawesome/free-solid-svg-icons';
 import { faPizzaSlice } from '@fortawesome/free-solid-svg-icons';
-import { FoodsService } from 'src/app/foods.service';
+import { FoodsService } from 'src/app/shared/food/services/foods.service';
 
 @Component({
   selector: 'app-home',
@@ -13,7 +14,7 @@ import { FoodsService } from 'src/app/foods.service';
 
 })
 export class HomeComponent implements OnInit {
-  
+  searchForm = new FormControl('');
   faHamburger = faHamburger;
   faBars = faBars;
   faAppleAlt = faAppleAlt;
