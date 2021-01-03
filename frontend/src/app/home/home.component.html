@@ -9,7 +9,7 @@
         <div class="col-sm-12">
             <app-categories (newItemEvent)="foods($event)"></app-categories>
         </div>
-          <app-food-list [itens]="itens" [itens]= "itemSearch"></app-food-list>
+          <app-food-list [isAdmin]='isAdmin' [isClient]='isClient' [itens]="itens" [itens]= "itemSearch"></app-food-list>
         
         <div class="col-sm-12">
             <div class="d-flex justify-content-end">

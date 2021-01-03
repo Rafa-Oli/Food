@@ -14,13 +14,16 @@ import { FoodsService } from 'src/app/shared/food/services/foods.service';
 
 })
 export class HomeComponent implements OnInit {
+  isAdmin: boolean = false
+  isClient: boolean = true
+  
   searchForm = new FormControl('');
   faHamburger = faHamburger;
   faBars = faBars;
   faAppleAlt = faAppleAlt;
   faCocktail = faCocktail;
   faPizzaSlice = faPizzaSlice;
-  itens;
+  itens:any;
   itemSearch;
 
   constructor(private foodsService: FoodsService) { }

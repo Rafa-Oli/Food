@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 import { FoodsService } from '../shared/food/services/foods.service';
 
@@ -10,6 +11,8 @@ import { FoodsService } from '../shared/food/services/foods.service';
 })
 export class AdminComponent implements OnInit {
   isAdmin:boolean = true
+  isClient:boolean = false
+  faPlus = faPlus;
   itens;
 
   constructor(private foodsService: FoodsService) { }

@@ -9,6 +9,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from '../app-routing.module';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { AppRoutingModule } from '../app-routing.module';
    
   ],
   imports: [
+    FontAwesomeModule,
     CommonModule,
     FoodModule,
     ReactiveFormsModule,
