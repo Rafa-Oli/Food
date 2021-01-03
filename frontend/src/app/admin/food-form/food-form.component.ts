@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
-import { Food } from '../../shared/food.model';
-import { FoodsService } from '../../foods.service';
+import { Food } from '../../shared/food/food';
+import { FoodsService } from '../../shared/food/services/foods.service';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-create-food',
-  templateUrl: './create-food.component.html',
-  styleUrls: ['./create-food.component.css'],
+  selector: 'app-food-form',
+  templateUrl: './food-form.component.html',
+  styleUrls: ['./food-form.component.css'],
 })
 
-export class CreateFoodComponent implements OnInit {
+export class FoodFormComponent implements OnInit {
 
   formulario: FormGroup;
   public dados: object;
@@ -49,6 +49,7 @@ export class CreateFoodComponent implements OnInit {
       price: this.formulario.controls['price'].value,
       cuisine: this.formulario.controls['cuisine'].value
     }
+    console.log(dados)
     this.foodsService.setFoods(dados);
     this.formulario.reset()
     // console.warn(this.formulario.controls['title'].value);

@@ -1,6 +1,6 @@
 
-import { Food } from '../../../shared/food.model';
-import { StorageService } from '../../../service/storage.service';
+import { Food } from '../../shared/food/food';
+import { StorageService } from '../../shared/food/services/storage.service';
 import { Component, OnInit } from '@angular/core';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';

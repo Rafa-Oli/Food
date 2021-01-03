@@ -16,7 +16,7 @@
                         </a>
                     </div>
                         <div class="card-body" *ngIf='isAdmin === true'>
-                            <a class="btn btn-outline-secondary" routerLink='/admin/create-food/{{ item.title }}' role="button" >
+                            <a class="btn btn-outline-secondary" routerLink='/admin/food-form/{{ item.title }}' role="button" >
                                 <fa-icon [icon]="faPen"></fa-icon>
                             </a>
                             <a class="btn btn-outline-secondary" (click)="deleteAdmin(item)" role="button" style="margin-left: 20px;">

@@ -2,8 +2,8 @@ import { Component, Input, OnInit, Output} from '@angular/core';
 import { faCartPlus } from '@fortawesome/free-solid-svg-icons';
 import { faPen } from '@fortawesome/free-solid-svg-icons';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
-import { Food } from '../../shared/food.model';
-import { StorageService } from '../../service/storage.service';
+import { Food } from '../food';
+import { StorageService } from '../services/storage.service';
 import { EventEmitter } from '@angular/core';
 
 const defaultTodoList = [];
@@ -11,13 +11,13 @@ const todoListStorageKey = "Todo_List";
 
 
 @Component({
-  selector: 'app-product-card',
-  templateUrl: './product-card.component.html',
-  styleUrls: ['./product-card.component.css']
+  selector: 'app-food-card',
+  templateUrl: './food-card.component.html',
+  styleUrls: ['./food-card.component.css']
 })
 
 
-export class ProductCardComponent implements OnInit{
+export class FoodCardComponent implements OnInit{
 
   @Output() newItemEvent = new EventEmitter<any>();
   
@@ -25,7 +25,7 @@ export class ProductCardComponent implements OnInit{
   @Input() isAdmin;
   @Input() itens;
   @Input() isClient;
-
+  
   faCartPlus = faCartPlus;
   faPen = faPen;
   faTrash = faTrash;

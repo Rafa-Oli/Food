@@ -1,4 +1,19 @@
 
-<div class="container">
-    <app-product-card class="card-list" [isAdmin]="isAdmin" [itens]="itens" (newItemEvent)="deleteItem($event)"></app-product-card>
+<!-- <div class="container">
+    <app-food-card class="card-list" [isAdmin]="isAdmin" [itens]="itens" (newItemEvent)="deleteItem($event)"></app-food-card>
+</div> -->
+<div>
+    <div class="d-flex justify-content-end">
+        <a class="btn btn-outline-secondary" [routerLink]="['/food-form']" role="button">
+            <fa-icon [icon]="faPlus"></fa-icon>
+            new food
+        </a>
+    
+    </div>
+     <div class="container">
+        <app-food-list  [isAdmin]="isAdmin" [isClient]="isClient" [itens]="itens"></app-food-list>
+    </div> 
+
+
+
 </div>
