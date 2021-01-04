@@ -8,7 +8,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { CartComponent } from './cart/cart.component';
 import { CategoriesComponent } from './categories/categories.component';
-import { SearchComponent } from './search/search.component';
 import { HomeComponent } from './home.component';
 import { AppRoutingModule } from '../app-routing.module';
 
@@ -17,7 +16,6 @@ import { AppRoutingModule } from '../app-routing.module';
     CartComponent,
     CategoriesComponent,
     HomeComponent,
-    SearchComponent
   ],
   imports: [
     ReactiveFormsModule,

@@ -14,6 +14,7 @@ import { FoodsService } from 'src/app/shared/food/services/foods.service';
 
 })
 export class HomeComponent implements OnInit {
+  
   isAdmin: boolean = false
   isClient: boolean = true
   
@@ -25,6 +26,7 @@ export class HomeComponent implements OnInit {
   faPizzaSlice = faPizzaSlice;
   itens:any;
   itemSearch;
+  foodSearch: string
 
   constructor(private foodsService: FoodsService) { }
 
@@ -36,7 +38,13 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+
+    this.searchForm.valueChanges
+      .subscribe(value => {
+        this.search(value)
+      })
+   }
 
   search(foodSearch: string) {
     this.itemSearch = this.foodsService.foods.filter(el => el.title.toLowerCase().includes(foodSearch.toLowerCase()))
