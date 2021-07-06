@@ -1,68 +1,67 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
-import { Food } from '../../shared/food/food';
-import { FoodsService } from '../../shared/food/services/foods.service';
+import { FormGroup, FormBuilder } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import { Food } from '../../shared/components/food';
+import { FoodsService } from '../../shared/components/services/foods.service';
 
 @Component({
-  selector: 'app-food-form',
-  templateUrl: './food-form.component.html',
-  styleUrls: ['./food-form.component.css'],
+    selector: 'app-food-form',
+    templateUrl: './food-form.component.html',
+    styleUrls: ['./food-form.component.css'],
 })
-
 export class FoodFormComponent implements OnInit {
+    public formulario: FormGroup;
 
-  formulario: FormGroup;
-  public dados: object;
-  food: Food;
-  isEdit = false
+    public food: Food;
 
-  constructor(private foodsService: FoodsService, private formBuilder: FormBuilder, private route: ActivatedRoute) { }
+    public isEdit = false;
 
-  ngOnInit(): void {
-    
-    //pegando parametro da url
-    const title = this.route.snapshot.paramMap.get('title')
-    this.food = this.foodsService.readByTitle(title) //fazendo o get
+    constructor(private foodsService: FoodsService, private formBuilder: FormBuilder, private route: ActivatedRoute) {}
 
-   //criando um novo food
-    if (Object.entries(this.food).length === 0) {
-      this.formulario = this.formBuilder.group({
-        title: [''],
-        price: [''],
-        cuisine: [''],
-      });
+    public ngOnInit(): void {
+        //pegando parametro da url
+        const title = this.route.snapshot.paramMap.get('title');
+        this.food = this.foodsService.readByTitle(title); //fazendo o get
 
-    } else { //update food
-      this.isEdit= true;
-      this.formulario = this.formBuilder.group({ //setando valores originais para edicao
-        title: [this.food[0].title],
-        price: [this.food[0].price],
-        cuisine: [this.food[0].cuisine],
-      });
-
-    }
-  }
-  onSubmit() {
-    let dados: Food = {
-      title: this.formulario.controls['title'].value,
-      price: this.formulario.controls['price'].value,
-      cuisine: this.formulario.controls['cuisine'].value
-    }
-    console.log(dados)
-    this.foodsService.setFoods(dados);
-    this.formulario.reset()
-    // console.warn(this.formulario.controls['title'].value);
-  }
-
-  onUpdate(){
-    let dados: Food = {
-      title: this.formulario.controls['title'].value,
-      price: this.formulario.controls['price'].value,
-      cuisine: this.formulario.controls['cuisine'].value
+        //criando um novo food
+        if (Object.entries(this.food).length === 0) {
+            this.formulario = this.formBuilder.group({
+                title: [''],
+                price: [''],
+                cuisine: [''],
+            });
+        } else {
+            //update food
+            this.isEdit = true;
+            this.formulario = this.formBuilder.group({
+                //setando valores originais para edicao
+                title: [this.food[0].title],
+                price: [this.food[0].price],
+                cuisine: [this.food[0].cuisine],
+            });
+        }
     }
 
-    this.foodsService.updateFood(dados, this.food)
-    this.formulario.reset()
-  }
+    public onSubmit(): void {
+        let dados: Food = {
+            title: this.formulario.controls['title'].value,
+            price: this.formulario.controls['price'].value,
+            cuisine: this.formulario.controls['cuisine'].value,
+        };
+        console.log(dados);
+        this.foodsService.setFoods(dados);
+        this.formulario.reset();
+        // console.warn(this.formulario.controls['title'].value);
+    }
+
+    public onUpdate(): void {
+        let dados: Food = {
+            title: this.formulario.controls['title'].value,
+            price: this.formulario.controls['price'].value,
+            cuisine: this.formulario.controls['cuisine'].value,
+        };
+
+        this.foodsService.updateFood(dados, this.food);
+        this.formulario.reset();
+    }
 }

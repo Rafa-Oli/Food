@@ -19,3 +19,7 @@
     margin-bottom: 5px;
     color: #6c757d;
 }
+.container{
+    max-width: 255px;
+    margin-bottom: 20px;
+}
