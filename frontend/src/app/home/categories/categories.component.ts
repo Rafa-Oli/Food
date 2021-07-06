@@ -1,6 +1,4 @@
-import { EventEmitter } from '@angular/core';
-import { Output } from '@angular/core';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { faHamburger } from '@fortawesome/free-solid-svg-icons';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
@@ -8,38 +6,29 @@ import { faAppleAlt } from '@fortawesome/free-solid-svg-icons';
 import { faCocktail } from '@fortawesome/free-solid-svg-icons';
 import { faPizzaSlice } from '@fortawesome/free-solid-svg-icons';
 
-
-
 @Component({
-  selector: 'app-categories',
-  templateUrl: './categories.component.html',
-  styleUrls: ['./categories.component.css']
+    selector: 'app-categories',
+    templateUrl: './categories.component.html',
+    styleUrls: ['./categories.component.css'],
 })
 export class CategoriesComponent implements OnInit {
+    @Output() newItemEvent = new EventEmitter<string>();
 
-  @Output() newItemEvent = new EventEmitter<string>();
+    public faHamburger = faHamburger;
 
-  categorie: string
-  faHamburger = faHamburger;
-  faBars = faBars;
-  faAppleAlt = faAppleAlt;
-  faCocktail = faCocktail;
-  faPizzaSlice = faPizzaSlice;
+    public faBars = faBars;
 
-  FoodItems:any;
-  
-  
-  constructor(private router: Router) { }
+    public faAppleAlt = faAppleAlt;
 
-  
-  
-  ngOnInit(): void {
-  }
+    public faCocktail = faCocktail;
 
-  
-  exibirTabela(food: string) {
-    this.newItemEvent.emit(food);
-  }
- 
+    public faPizzaSlice = faPizzaSlice;
 
+    constructor(private router: Router) {}
+
+    public ngOnInit(): void {}
+
+    public exibirTabela(food: string): void {
+        this.newItemEvent.emit(food);
+    }
 }

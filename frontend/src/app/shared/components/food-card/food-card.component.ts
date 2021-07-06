@@ -1,53 +1,49 @@
-import { Component, Input, OnInit, Output} from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
 import { faCartPlus } from '@fortawesome/free-solid-svg-icons';
 import { faPen } from '@fortawesome/free-solid-svg-icons';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
+import { EventEmitter } from '@angular/core';
 import { Food } from '../food';
 import { StorageService } from '../services/storage.service';
-import { EventEmitter } from '@angular/core';
 
 const defaultTodoList = [];
-const todoListStorageKey = "Todo_List";
-
+const todoListStorageKey = 'Todo_List';
 
 @Component({
-  selector: 'app-food-card',
-  templateUrl: './food-card.component.html',
-  styleUrls: ['./food-card.component.css']
+    selector: 'app-food-card',
+    templateUrl: './food-card.component.html',
+    styleUrls: ['./food-card.component.css'],
 })
+export class FoodCardComponent implements OnInit {
+    @Output() public newItemEvent = new EventEmitter<any>();
 
+    @Input() public isAdmin;
 
-export class FoodCardComponent implements OnInit{
+    @Input() public itens;
 
-  @Output() newItemEvent = new EventEmitter<any>();
-  
+    @Input() public isClient;
 
-  @Input() isAdmin;
-  @Input() itens;
-  @Input() isClient;
-  
-  faCartPlus = faCartPlus;
-  faPen = faPen;
-  faTrash = faTrash;
-  todoList: Food[];
+    public faCartPlus = faCartPlus;
 
-  constructor(private storageService: StorageService) {
-    this.todoList =
-      storageService.getData(todoListStorageKey) || defaultTodoList;
-   }
+    public faPen = faPen;
 
-  ngOnInit(): void {
-  }
-  
+    public faTrash = faTrash;
 
-  addToCart(food) {
-    this.todoList.push(food);
-    this.storageService.setData(todoListStorageKey, this.todoList);
-    window.alert("Your product has been added to the cart!");
-  }
+    public todoList: Food[];
 
-  deleteAdmin(food){
-    this.newItemEvent.emit(food);
-  }
+    constructor(private storageService: StorageService) {
+        this.todoList = storageService.getData(todoListStorageKey) || defaultTodoList;
+    }
 
+    public ngOnInit(): void {}
+
+    public addToCart(food: Food): void {
+        this.todoList.push(food);
+        this.storageService.setData(todoListStorageKey, this.todoList);
+        window.alert('Your product has been added to the cart!');
+    }
+
+    public deleteAdmin(food: Food): void {
+        this.newItemEvent.emit(food);
+    }
 }

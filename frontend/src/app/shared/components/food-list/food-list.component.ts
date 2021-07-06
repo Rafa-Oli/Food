@@ -1,25 +1,25 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Food } from '../food';
 
 import { FoodsService } from '../services/foods.service';
 
 @Component({
-  selector: 'app-food-list',
-  templateUrl: './food-list.component.html',
-  styleUrls: ['./food-list.component.css']
+    selector: 'app-food-list',
+    templateUrl: './food-list.component.html',
+    styleUrls: ['./food-list.component.css'],
 })
 export class FoodListComponent implements OnInit {
-  @Input() itens: string;
- // isClient: boolean = true;
+    @Input() public itens: string;
 
-  @Input() isAdmin;
-  @Input() isClient: boolean;
-  constructor(private foodsService: FoodsService){ }
+    @Input() public isAdmin;
 
-  ngOnInit(): void {
-  }
+    @Input() public isClient: boolean;
 
-  deleteItem(food) {
-    this.foodsService.deleteFoods(food);
-  }
+    constructor(private foodsService: FoodsService) {}
 
+    public ngOnInit(): void {}
+
+    public deleteItem(food: Food): void {
+        this.foodsService.deleteFoods(food);
+    }
 }
