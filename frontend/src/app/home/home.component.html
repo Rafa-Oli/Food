@@ -1,29 +1,23 @@
-
 <div class="jumbotron">
     <div class="row">
         <div class="col-sm-12">
-        <div class="container">
-        
-            <form class="form-inline">
-                <input class="form-control" type="search" [formControl]="searchForm" placeholder="Search">
-            </form>
-        
-        </div>
-       
+            <div class="container">
+                <form class="form-inline">
+                    <input class="form-control" type="search" [formControl]="searchForm" placeholder="Search">
+                </form>
+            </div>
         </div>
     </div>
     <div class="row">
         <div class="col-sm-12">
-            <app-categories (newItemEvent)="foods($event)"></app-categories>
+            <app-categories (newItemEvent)="getFoods($event)"></app-categories>
         </div>
-          <app-food-list [isAdmin]='isAdmin' [isClient]='isClient' [itens]="itens" [itens]= "itemSearch"></app-food-list>
-        
+        <app-food-list [isAdmin]='isAdmin' [isClient]='isClient' [itens]="itens" [itens]="itemSearch"></app-food-list>
+
         <div class="col-sm-12">
             <div class="d-flex justify-content-end">
                 <app-cart></app-cart>
             </div>
         </div>
     </div>
-
 </div>
-
