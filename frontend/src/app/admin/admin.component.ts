@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
-import { Food } from '../shared/components/food';
-
-import { FoodsService } from '../shared/components/services/foods.service';
+import { Food } from '../shared/types/food';
+import { FoodsService } from '../shared/services/foods.service';
 
 @Component({
     selector: 'app-admin',
@@ -16,7 +15,7 @@ export class AdminComponent implements OnInit {
 
     public faPlus = faPlus;
 
-    public itens;
+    public itens: Food[];
 
     constructor(private foodsService: FoodsService) {}
 

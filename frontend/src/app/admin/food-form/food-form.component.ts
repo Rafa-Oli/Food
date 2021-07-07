@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
-import { Food } from '../../shared/components/food';
-import { FoodsService } from '../../shared/components/services/foods.service';
+import { Food } from '../../shared/types/food';
+import { FoodsService } from '../../shared/services/foods.service';
 
 @Component({
     selector: 'app-food-form',

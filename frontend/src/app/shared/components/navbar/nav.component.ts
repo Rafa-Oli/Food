@@ -8,5 +8,5 @@ import { Component, OnInit } from '@angular/core';
 export class NavComponent implements OnInit {
     constructor() {}
 
-    ngOnInit(): void {}
+    public ngOnInit(): void {}
 }

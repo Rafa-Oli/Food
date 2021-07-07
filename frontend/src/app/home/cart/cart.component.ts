@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
-import { Food } from '../../shared/components/food';
-import { StorageService } from '../../shared/components/services/storage.service';
+import { Food } from '../../shared/types/food';
+import { StorageService } from '../../shared/services/storage.service';
 
 const todoListStorageKey = 'Todo_List';
 

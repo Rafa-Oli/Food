@@ -3,8 +3,8 @@ import { faCartPlus } from '@fortawesome/free-solid-svg-icons';
 import { faPen } from '@fortawesome/free-solid-svg-icons';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { EventEmitter } from '@angular/core';
-import { Food } from '../food';
-import { StorageService } from '../services/storage.service';
+import { Food } from '../../types/food';
+import { StorageService } from '../../services/storage.service';
 
 const defaultTodoList = [];
 const todoListStorageKey = 'Todo_List';
