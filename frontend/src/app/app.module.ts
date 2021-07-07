@@ -6,12 +6,11 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AdminModule } from './admin/admin.module';
-import { FoodModule } from './shared/components/food.module';
+import { SharedModule } from './shared/shared.module';
 import { HomeModule } from './home/home.module';
-import { NavComponent } from './shared/components/navbar/nav.component';
 
 @NgModule({
-    declarations: [AppComponent, NavComponent],
+    declarations: [AppComponent],
     imports: [
         BrowserModule,
         AppRoutingModule,
@@ -19,7 +18,7 @@ import { NavComponent } from './shared/components/navbar/nav.component';
         ReactiveFormsModule,
         MatToolbarModule,
         FormsModule,
-        FoodModule,
+        SharedModule,
         AdminModule,
         HomeModule,
     ],
