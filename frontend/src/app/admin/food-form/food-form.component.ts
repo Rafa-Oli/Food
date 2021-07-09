@@ -10,58 +10,45 @@ import { FoodsService } from '../../shared/services/foods.service';
     styleUrls: ['./food-form.component.css'],
 })
 export class FoodFormComponent implements OnInit {
-    public formulario: FormGroup;
+    public foodForm: FormGroup;
 
     public food: Food;
 
     public isEdit = false;
 
-    constructor(private foodsService: FoodsService, private formBuilder: FormBuilder, private route: ActivatedRoute) {}
+    constructor(
+        private readonly foodsService: FoodsService,
+        private formBuilder: FormBuilder,
+        private route: ActivatedRoute,
+    ) {}
 
     public ngOnInit(): void {
-        //pegando parametro da url
-        const title = this.route.snapshot.paramMap.get('title');
-        this.food = this.foodsService.readByTitle(title); //fazendo o get
+        const getTitle = this.route.snapshot.paramMap.get('title');
+        this.food = this.foodsService.getByTitle(getTitle);
 
-        //criando um novo food
-        if (Object.entries(this.food).length === 0) {
-            this.formulario = this.formBuilder.group({
-                title: [''],
-                price: [''],
-                cuisine: [''],
-            });
-        } else {
-            //update food
+        this.createForm();
+        if (getTitle) {
             this.isEdit = true;
-            this.formulario = this.formBuilder.group({
-                //setando valores originais para edicao
-                title: [this.food[0].title],
-                price: [this.food[0].price],
-                cuisine: [this.food[0].cuisine],
-            });
+            this.foodForm.patchValue({ title: this.food.title, price: this.food.price, cuisine: this.food.cuisine });
         }
     }
 
     public onSubmit(): void {
-        let dados: Food = {
-            title: this.formulario.controls['title'].value,
-            price: this.formulario.controls['price'].value,
-            cuisine: this.formulario.controls['cuisine'].value,
-        };
-        console.log(dados);
-        this.foodsService.setFoods(dados);
-        this.formulario.reset();
-        // console.warn(this.formulario.controls['title'].value);
+        this.food ? this.onUpdate() : this.foodsService.setFoods(this.foodForm.value);
+
+        this.foodForm.reset();
     }
 
     public onUpdate(): void {
-        let dados: Food = {
-            title: this.formulario.controls['title'].value,
-            price: this.formulario.controls['price'].value,
-            cuisine: this.formulario.controls['cuisine'].value,
-        };
+        this.foodsService.updateFood(this.foodForm.value, this.food);
+        this.foodForm.reset();
+    }
 
-        this.foodsService.updateFood(dados, this.food);
-        this.formulario.reset();
+    public createForm(): void {
+        this.foodForm = this.formBuilder.group({
+            title: [''],
+            price: [''],
+            cuisine: [''],
+        });
     }
 }

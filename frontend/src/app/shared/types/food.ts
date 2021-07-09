@@ -5,7 +5,7 @@ export interface Food {
     cuisine: string;
 }
 
-export const data = [
+export const data: Food[] = [
     {
         title: 'Buffalo Chicken Salad',
         price: 7.5,

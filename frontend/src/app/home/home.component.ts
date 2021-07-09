@@ -33,7 +33,8 @@ export class HomeComponent implements OnInit {
         this.itens =
             food === 'all'
                 ? this.foodsService.getFoods()
-                : this.foodsService.getFoods().filter((e) => e.cuisine === food);
+                : this.foodsService.getFoods()?.filter((e) => e.cuisine === food);
+                console.log(this.itens);
     }
 
     public search(foodSearch: string): void {

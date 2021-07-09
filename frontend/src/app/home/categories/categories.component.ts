@@ -1,5 +1,4 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
-import { Router } from '@angular/router';
 import { faHamburger } from '@fortawesome/free-solid-svg-icons';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { faAppleAlt } from '@fortawesome/free-solid-svg-icons';
@@ -12,7 +11,7 @@ import { faPizzaSlice } from '@fortawesome/free-solid-svg-icons';
     styleUrls: ['./categories.component.css'],
 })
 export class CategoriesComponent implements OnInit {
-    @Output() newItemEvent = new EventEmitter<string>();
+    @Output() public newItemEvent = new EventEmitter<string>();
 
     public faHamburger = faHamburger;
 
@@ -24,11 +23,11 @@ export class CategoriesComponent implements OnInit {
 
     public faPizzaSlice = faPizzaSlice;
 
-    constructor(private router: Router) {}
+    constructor() {}
 
     public ngOnInit(): void {}
 
-    public exibirTabela(food: string): void {
+    public showTable(food: string): void {
         this.newItemEvent.emit(food);
     }
 }
